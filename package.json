@@ -1,5 +1,5 @@
 {
-  "name": "@mfonabasiudobia/str-utils",
+  "name": "@mfonabasiudobia/str-func",
   "version": "1.0.0",
   "description": "This package will help make string functions easier",
   "main": "src/index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mfonabasiudobia/str-utils.git"
+    "url": "git+https://github.com/mfonabasiudobia/str-func.git"
   },
   "keywords": [
     "String"
@@ -16,7 +16,7 @@
   "author": "MfonAbasi Udobia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mfonabasiudobia/str-utils/issues"
+    "url": "https://github.com/mfonabasiudobia/str-func/issues"
   },
-  "homepage": "https://github.com/mfonabasiudobia/str-utils#readme"
+  "homepage": "https://github.com/mfonabasiudobia/str-func#readme"
 }
