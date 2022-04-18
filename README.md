@@ -24,17 +24,17 @@ const str = strtolower('HELLO WORLD!');
 ### trim
 The trim() function removes whitespace or other predefined characters from both sides of a string
 ```javascript
-const str = trim('&nbsp;&nbsp; alpha &nbsp;&nbsp;');
+const str = trim('   alpha   ');
 // returns 'alpha'
 
 // OR
 
-const str = trim('&nbsp;&nbsp; alpha &nbsp;&nbsp;', 'a'); //by default third parameter is set to false
+const str = trim('   alpha   ', 'a'); //by default third parameter is set to false
 // returns 'lph'
 
 // OR 
 
-const str = trim('&nbsp;&nbsp; Alpha &nbsp;&nbsp;', 'a', true); //the third parameter set to true indicates case sensitivity
+const str = trim('   Alpha   ', 'a', true); //the third parameter set to true indicates case sensitivity
 // returns 'Alpha'
 
 ```
