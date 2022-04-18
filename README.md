@@ -4,7 +4,7 @@ npm install @mfonabasiudobia/str-func
 ```
 # Usage
 ```
-import { strtoupper, str_shuffle, strtolower, trim, strlen, ucwords, ucfirst, lcfirst, rand, uniqueID, rtrim, ltrim, explode, implode  } from "@mfonabasiudobia/str-func"
+import { strtoupper, str_shuffle, strtolower, trim, strlen, ucwords, ucfirst, lcfirst, rand, rtrim, ltrim, explode, implode  } from "@mfonabasiudobia/str-func"
 ```
 
 ### strtoupper
@@ -35,7 +35,7 @@ const str = trim('   alpha   ', 'a'); //the second parameter is optional, it spe
 // OR 
 
 const str = trim('   Alpha   ', 'a', true); //the third parameter set to true indicates case sensitivity
-// returns 'Alpha'
+// returns 'Alph'
 
 ```
 
@@ -77,4 +77,27 @@ const str = ltrim('   Alpha   ', 'a', true); //the third parameter set to true i
 
 //by default third parameter is set to false
 
+```
+
+### strlen
+The strlen() function returns the length of a string
+```javascript
+const str = strlen('HELLO WORLD!');
+// returns 12
+```
+
+### rand
+The rand() function generates a random integer
+```javascript
+const str = rand();
+// returns 127929382383
+```
+##### Example tip
+If you want a random integer between 10 and 100 (inclusive), use rand(10, 100)
+```javascript
+rand();
+
+//or
+
+rand(min, max);
 ```
