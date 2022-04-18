@@ -1,4 +1,4 @@
-#@ @mfonabasiudobia/str-func
+## @mfonabasiudobia/str-func
 > Better javascript string functions similar to php
 
 ## Installation
