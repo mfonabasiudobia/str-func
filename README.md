@@ -7,3 +7,10 @@ npm install @mfonabasiudobia/str-func
 import { strtoupper, str_shuffle, strtolower, trim, strlen, ucwords, ucfirst, lcfirst, rand, uniqueID, rtrim, ltrim, explode, implode  } from "@mfonabasiudobia/str-func"
 ```
 
+### strtoupper
+
+```javascript
+
+const str = strtoupper('hello world');
+// returns HELLO WORLD
+```
