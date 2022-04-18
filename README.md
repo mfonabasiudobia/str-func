@@ -29,12 +29,52 @@ const str = trim('   alpha   ');
 
 // OR
 
-const str = trim('   alpha   ', 'a'); //by default third parameter is set to false
+const str = trim('   alpha   ', 'a'); //the second parameter is optional, it specifies which character to remove from the string
 // returns 'lph'
 
 // OR 
 
 const str = trim('   Alpha   ', 'a', true); //the third parameter set to true indicates case sensitivity
 // returns 'Alpha'
+
+```
+
+### rtrim
+The rtrim() function removes whitespace or other predefined characters from right sides of a string
+```javascript
+const str = rtrim('   alpha   ');
+// returns '   alpha'
+
+// OR
+
+const str = rtrim('   alpha   ', 'a'); //the second parameter is optional, it specifies which character to remove from the string
+// returns '   alph'
+
+// OR 
+
+const str = rtrim('   Alpha   ', 'A', true); //the third parameter set to true indicates case sensitivity
+// returns '   Alpha'
+
+//by default third parameter is set to false
+
+```
+
+### ltrim
+The ltrim() function removes whitespace or other predefined characters from left sides of a string
+```javascript
+const str = ltrim('   alpha   ');
+// returns 'alpha   '
+
+// OR
+
+const str = ltrim('   alpha   ', 'a'); //the second parameter is optional, it specifies which character to remove from the string
+// returns 'lpha   '
+
+// OR 
+
+const str = ltrim('   Alpha   ', 'a', true); //the third parameter set to true indicates case sensitivity
+// returns 'Alpha   '
+
+//by default third parameter is set to false
 
 ```
