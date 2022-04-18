@@ -1,8 +1,11 @@
-# Installation
+#@mfonabasiudobia@str-func
+> Better javascript string functions similar to php
+
+## Installation
 ```
 npm install @mfonabasiudobia/str-func
 ```
-# Usage
+## Usage
 ```
 import { strtoupper, str_shuffle, strtolower, trim, strlen, ucwords, ucfirst, lcfirst, rand, rtrim, ltrim, explode, implode  } from "@mfonabasiudobia/str-func"
 ```
@@ -92,7 +95,7 @@ The rand() function generates a random integer
 const str = rand();
 // returns 127929382383
 ```
-##### Example tip
+###### Example tip
 If you want a random integer between 10 and 100 (inclusive), use rand(10, 100)
 ```javascript
 rand();
@@ -100,4 +103,52 @@ rand();
 //or
 
 rand(min, max);
+```
+
+### str_shuffle
+The str_shuffle() function randomly shuffles all the characters of a string 
+```javascript
+const str = str_shuffle('hello world!');
+// returns oldlre loWH
+```
+
+### ucwords
+The ucwords() function converts the first character of each word in a string to uppercase 
+```javascript
+const str = ucwords('hello world!');
+// returns Hello World!
+
+//or
+
+const str = ucwords('he|llo world!',"|"); //the second parameter is optional, it specifies the word separator character
+//returns He|Llo world!
+
+```
+
+### ucfirst
+The ucfirst() function converts the first character of a string to uppercase 
+```javascript
+const str = ucfirst('hello world!');
+// returns Hello world!
+```
+
+### lcfirst
+The lcfirst() function converts the first character of a string to lowercase 
+```javascript
+const str = lcfirst('Hello world!');
+// returns hello world!
+```
+
+### explode
+The explode() function breaks a string into an array 
+```javascript
+const str = explode('hello,world',",");
+// returns ['hello','world']
+```
+
+### implode
+The implode() function returns a string from the elements of an array 
+```javascript
+const str = implode(['hello','world'],"#");
+// returns hello#world
 ```
