@@ -37,9 +37,15 @@ const str = trim('   alpha   ', 'a'); //the second parameter is optional, it spe
 
 // OR 
 
-const str = trim('   Alpha   ', 'a', true); //the third parameter set to true indicates case sensitivity
+const str = trim('   Alpha   ', 'a', false); //the third parameter set to false indicates case insensitivity
+// returns 'lph'
+
+// OR 
+
+const str = trim('   Alpha   ', 'a', true); or trim('   Alpha   ', 'a'); 
 // returns 'Alph'
 
+//by default third parameter is set to true
 ```
 
 ### rtrim
@@ -55,10 +61,16 @@ const str = rtrim('   alpha   ', 'a'); //the second parameter is optional, it sp
 
 // OR 
 
-const str = rtrim('   Alpha   ', 'A', true); //the third parameter set to true indicates case sensitivity
+const str = rtrim('   Alpha   ', 'A', false); //the third parameter set to false indicates case insensitivity
+// returns '   Alph'
+
+// OR 
+
+const str = rtrim('   Alpha   ', 'a', true); or rtrim('   Alpha   ', 'a'); 
 // returns '   Alpha'
 
-//by default third parameter is set to false
+
+//by default third parameter is set to true
 
 ```
 
@@ -75,10 +87,15 @@ const str = ltrim('   alpha   ', 'a'); //the second parameter is optional, it sp
 
 // OR 
 
-const str = ltrim('   Alpha   ', 'a', true); //the third parameter set to true indicates case sensitivity
+const str = ltrim('   Alpha   ', 'a', false); //the third parameter set to false indicates case insensitivity
+// returns 'lpha   '
+
+// OR 
+
+const str = ltrim('   Alpha   ', 'a', true); or ltrim('   Alpha   ', 'a'); 
 // returns 'Alpha   '
 
-//by default third parameter is set to false
+//by default third parameter is set to true
 
 ```
 

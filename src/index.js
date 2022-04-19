@@ -24,11 +24,11 @@ const strtoupper = (str) => {
 
 }
 
-const rand = (min, max) => {
+const rand = (min = 0, max = 0) => {
 
 	try {
 		if(checkTypes(min + max, ['number'])) 
-			return Math.floor(Math.random() * (max - min + 1) + min);
+			return !(min + max) ? uniqueID() : Math.floor(Math.random() * (max - min + 1) + min);
 
 		throw (msg.isNumber);
 
@@ -38,23 +38,7 @@ const rand = (min, max) => {
 
 }
 
-const uniqueID = (limit = 0) => {
-
-	try {
-		if(checkTypes(limit, ['number'])) {
-			let randStr = (Math.floor(Math.random() * Math.floor(Math.random() * Date.now()))).toString();
-
-			return limit <= 0 ? randStr : randStr.substring(0, limit);
-		}
-
-		throw ("Limit can only be of type number");
-
-	} catch (e) {
-		console.log(e);
-	}
-
-	
-}
+const uniqueID = () => (Math.floor(Math.random() * Math.floor(Math.random() * Date.now()))).toString();
 
 
 
@@ -73,11 +57,14 @@ const strtolower = (str) => {
 }
 
 
-const trim = (str) => {
+const trim = (str, charlist = null, isSensitive = true) => {
 
 	try {
+		const startRegex = new RegExp(`^${charlist}*`,!isSensitive ? 'i' : '');
+		const endRegex = new RegExp(`${charlist}*$`,!isSensitive ? 'i' : '');
+
 		if(checkTypes(str, ['string'])) 
-			return str.trim();
+			return charlist === null ? str.trim() : str.trim().replace(startRegex,"").replace(endRegex,"") ;
 
 		throw (msg.isString);
 
@@ -87,11 +74,14 @@ const trim = (str) => {
 	
 }
 
-const rtrim = (str) => {
+const rtrim = (str, charlist = null, isSensitive = true) => {
 
 	try {
+
+		const endRegex = new RegExp(`${charlist}*$`,!isSensitive ? 'i' : '');
+
 		if(checkTypes(str, ['string'])) 
-			return str.trimRight();
+			return charlist === null ? str.trimRight() : str.trimRight().replace(endRegex,"") ;
 
 		throw (msg.isString);
 
@@ -101,11 +91,13 @@ const rtrim = (str) => {
 	
 }
 
-const ltrim = (str) => {
+const ltrim = (str, charlist = null, isSensitive = true) => {
 
 	try {
+		const startRegex = new RegExp(`^${charlist}*`,!isSensitive ? 'i' : '');
+
 		if(checkTypes(str, ['string'])) 
-			return str.trimStart();
+			return charlist === null ? str.trimStart() : str.trimStart().replace(startRegex,"") ;
 
 		throw (msg.isString);
 
@@ -129,14 +121,16 @@ const strlen = (str) => {
 	
 }
 
-const ucwords = (str, separator = '') => { //separator specifies the word separator character
+const ucwords = (str, separator = ' ') => { //separator specifies the word separator character
 
 	try {
 		if(checkTypes(str, ['string'])){
-				
-			const regex = new RegExp(`${separator}\\b[a-z]`,"g");
-			
-			return deepTrim(str).replace(regex, (res) => strtoupper(res)); 
+
+			let arrayString = explode(str, separator);
+
+			arrayString.map((item, index) => arrayString[index] = ucfirst(item) );
+
+			return implode(arrayString, separator);
 
 		}
 
@@ -152,7 +146,7 @@ const ucfirst = (str) => {
 
 	try {
 		if(checkTypes(str, ['string'])) 
-			return deepTrim(str).replace(/\b[a-z]/, (res) => strtoupper(res)); 
+			return strtoupper(deepTrim(str).charAt(0)) + str.slice(1); 
 
 		throw (msg.isString);
 
@@ -166,7 +160,7 @@ const lcfirst = (str) => {
 
 	try {
 		if(checkTypes(str, ['string']))  
-			return deepTrim(str).replace(/\b[A-Z]/, (res) => strtolower(res)); 
+			return strtolower(deepTrim(str).charAt(0)) + deepTrim(str).slice(1); 
 
 		throw (msg.isString);
 
@@ -220,4 +214,4 @@ const str_shuffle = (str) => {
 
 
 
-module.exports = { strtoupper, str_shuffle, strtolower, trim, strlen, ucwords, ucfirst, lcfirst, rand, uniqueID, rtrim, ltrim, explode, implode };
+module.exports = { strtoupper, str_shuffle, strtolower, trim, strlen, ucwords, ucfirst, lcfirst, rand, rtrim, ltrim, explode, implode };
